@@ -150,11 +150,13 @@ export async function main() {
 	// permission already granted
 	await loadFonts();
 	// load locked fonts
-	locked.forEach((font) => {
+
+	for (let font of locked) {
 		updatePreview(font);
 		elPreviewLock.checked = true;
 		copyPreview();
-	});
+		await new Promise((r) => requestAnimationFrame(r));
+	}
 
 	// load initial random font
 	updatePreview(randItem([...families.keys()]));
