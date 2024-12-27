@@ -9,8 +9,6 @@ concurrency:
   group: ${{ github.workflow }}
 
 env:
-  ITCH_USER: seansleblanc
-  ITCH_GAME: gimme-font
   DISCORD_USERNAME: ${{ github.repository }}
   DISCORD_AVATAR: https://raw.githubusercontent.com/${{ github.repository }}/main/src/assets/icon.png
 
@@ -51,15 +49,12 @@ jobs:
       - id: package-version
         if: steps.semantic.outputs.new_release_published == 'true'
         uses: martinbeentjes/npm-get-version-action@v1.1.0
-      - uses: yeslayla/butler-publish-itchio-action@b5f0b072e8b12b731c69f12b5430f594700e0947
+      - uses: peaceiris/actions-gh-pages@v4
         if: steps.semantic.outputs.new_release_published == 'true'
-        env:
-          BUTLER_CREDENTIALS: ${{ secrets.ITCH_API_KEY }}
-          CHANNEL: web
-          ITCH_GAME: ${{ env.ITCH_GAME }}
-          ITCH_USER: ${{ env.ITCH_USER }}
-          PACKAGE: dist
-          VERSION: ${{ steps.package-version.outputs.current-version }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          allow_empty_commit: true
 
   notify-finished:
     if: ${{ success() || failure() }}
@@ -70,7 +65,7 @@ jobs:
         if: ${{ success() }}
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-          DISCORD_EMBEDS: '[{ "color": 2357925, "title": "v${{ steps.package-version.outputs.current-version }} deployed", "url": "https://${{ env.ITCH_USER }}.itch.io/${{ env.ITCH_GAME }}" }]'
+          DISCORD_EMBEDS: '[{ "color": 2357925, "title": "v${{ needs.get-release.outputs.version }} deployed", "url": "https://seleb.github.io/gimme-font" }]'
       - uses: Ilshidur/action-discord@0.3.2
         if: ${{ failure() }}
         env:
