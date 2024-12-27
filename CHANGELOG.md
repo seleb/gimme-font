@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/seleb/gimme-font/compare/v1.0.1...v1.0.2) (2024-12-27)
+
+
+### Bug Fixes
+
+* locked font overwriting initial font ([da57215](https://github.com/seleb/gimme-font/commit/da57215fe12c9da640e570fef43fe613cb651f17))
+
 ## [1.0.1](https://github.com/seleb/gimme-font/compare/v1.0.0...v1.0.1) (2024-12-27)
 
 
