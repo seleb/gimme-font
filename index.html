@@ -39,7 +39,40 @@
   <main>
     <div id="about">
       <h1>%TITLE%</h1>
+      <aside>
+        <h2>notes</h2>
+        <ul>
+          <li>click the checkbox next to a font to remember it across sessions</li>
+          <li>this app requires permission to access your local fonts, which only works on <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/Local_Font_Access_API#browser_compatibility">some
+              browsers</a> and may not be comprehensive</li>
+        </ul>
+      </aside>
     </div>
+
+    <div id="storage-warning" style="display: none;">Warning: there was a storage error. You can still use the app, but
+      locked fonts may not be saved. See console for details.</div>
+
+    <div id="prompt">
+      <button id="permission">Load local fonts</button>
+    </div>
+
+    <section>
+      <p><span id="family-count">0</span> font families loaded (<span id="style-count">0</span> styles)</p>
+      <button id="random">add random</button>
+      <button onclick="window.location.reload()">refresh</button>
+      <button id="random-all">lemme see em all!</button>
+      <ul id="list">
+        <li id="preview">
+          <p class="fontname">default</p>
+          <input type="checkbox" title="not locked" />
+          <header contenteditable="">sphinx of black quartz hear my vow</header>
+          <p class="lipsum" contenteditable="">lorem ipsum dolor sit amet</p>
+        </li>
+      </ul>
+    </section>
+  </main>
+
   <footer>
     <span>%TITLE% <a href="https://github.com/seleb/gimme-font/blob/main/CHANGELOG.md" target="_blank"
         rel="noopener noreferrer">v%VERSION%</a></span>

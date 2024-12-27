@@ -27,7 +27,6 @@
 				"@semantic-release/git",
 				{
 					"assets": [
-						"docs/**/*",
 						"CHANGELOG.md",
 						"package.json",
 						"package-lock.json"
@@ -42,7 +41,7 @@
 		"build": "vite build",
 		"serve": "vite preview --port 80",
 		"start:prod": "npm run build && npm run serve",
-		"lint": "eslint \"**/*.{js,ts}\"",
+		"lint": "eslint \"**/*.ts\"",
 		"typecheck": "tsc --skipLibCheck",
 		"analyze": "npx vite-bundle-visualizer -t sunburst"
 	},
@@ -54,6 +53,8 @@
 		"eslint-config-airbnb-typescript": "^17.0.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-import": "^2.27.5",
+		"localforage": "^1.10.0",
+		"lorem-ipsum": "^2.0.8",
 		"sass": "^1.71.0",
 		"typescript": "^5.0.4",
 		"vite": "^5.0.4"

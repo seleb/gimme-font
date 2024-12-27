@@ -1,7 +1,7 @@
 :root {
 	color-scheme: light;
-	--fg: #181316;
-	--bg: #fff1e1;
+	--fg: #14060f;
+	--bg: #fff5e2;
 
 	@media (prefers-color-scheme: dark) {
 		color-scheme: dark;
@@ -10,6 +10,7 @@
 	}
 
 	color: var(--fg);
+	scrollbar-gutter: stable;
 }
 
 * {
@@ -105,3 +106,89 @@ footer {
 	}
 }
 
+@keyframes slidein1 {
+	from {
+		transform: translateX(-1em);
+		opacity: 0;
+		padding-bottom: 0;
+	}
+}
+
+@keyframes slidein2 {
+	from {
+		transform: translateX(-1em);
+		opacity: 0;
+		padding-bottom: 0;
+	}
+}
+
+#prompt+section {
+	display: none;
+}
+
+#preview {
+	animation: slidein1 0.1s ease-out;
+
+	&[data-slide="false"] {
+		animation-name: slidein2;
+	}
+}
+
+#list {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+
+	li {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		grid-template-areas:
+			"check name"
+			"check header"
+			"check body";
+		align-items: center;
+		gap: 0.5rem 1rem;
+		padding: 0.5rem;
+
+		>* {
+			margin: 0;
+			padding: 0;
+		}
+	}
+
+	input {
+		grid-area: check;
+		grid-row: -1/1;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		&::before {
+			display: inline-block;
+		}
+
+		&:checked::before {
+			content: '🔒';
+		}
+	}
+
+	.fontname {
+		grid-area: name;
+		font-family: sans-serif;
+	}
+
+	header {
+		grid-area: header;
+		font-size: 200%;
+	}
+
+	.lipsum {
+		grid-area: body;
+	}
+
+	li:not(:last-of-type) {
+		border-bottom: dotted 1px var(--fg);
+	}
+}

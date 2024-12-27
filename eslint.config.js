@@ -7,7 +7,7 @@ import eslintPluginImport from 'eslint-plugin-import';
 
 export default [
 	{
-		files: ['**/*.{js,ts}'],
+		files: ['**/*.ts'],
 		ignores: ['docs/**'],
 		plugins: {
 			import: eslintPluginImport,
