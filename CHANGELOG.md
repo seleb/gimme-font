@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/seleb/gimme-font/compare/v1.0.0...v1.0.1) (2024-12-27)
+
+
+### Bug Fixes
+
+* switch to github pages deployment ([3ef9a1d](https://github.com/seleb/gimme-font/commit/3ef9a1d9cf807273212fb223f5cb7a554029cbf9))
+
 # 1.0.0 (2024-12-27)
 
 
