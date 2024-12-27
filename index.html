@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="./assets/icon-HC2d9EAo.png" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <title>gimme-font</title>
+
+  <!-- GENERAL SEARCH INFO -->
+  <meta name="author" content="Sean S. LeBlanc" />
+  <meta name="copyright" content="Sean S. LeBlanc" />
+  <meta name="description" content="a basic web ui for browsing fonts installed on your device" />
+  <link rel="canonical" href="https://seleb.github.io/gimme-font" />
+
+  <!-- OPENGRAPH TAGS -->
+  <meta property="og:title" content="gimme-font" />
+  <meta property="og:site_name" content="gimme-font" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://seleb.github.io/gimme-font" />
+
+  <!-- TWITTER CARD -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:creator" content="@SeanSLeBlanc">
+  <meta name="twitter:title" content="gimme-font" />
+  <meta name="twitter:description" content="a basic web ui for browsing fonts installed on your device" />
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/seleb/gimme-font/main/src/assets/icon.png" />
+  <script type="module" crossorigin src="./assets/index-DHbCxMiv.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-x4bkjOFD.css">
+</head>
+
+<body>
+  <div id="preloader" aria-busy="true"
+    style="display: flex; height: 100%; align-items: center; justify-content: center; text-align: center;">
+    Loading...
+    <noscript>You must enable javascript to use this app.</noscript>
+  </div>
+  <main>
+    <div id="about">
+      <h1>gimme-font</h1>
+      <aside>
+        <h2>notes</h2>
+        <ul>
+          <li>click the checkbox next to a font to remember it across sessions</li>
+          <li>this app requires permission to access your local fonts, which only works on <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/Local_Font_Access_API#browser_compatibility">some
+              browsers</a> and may not be comprehensive</li>
+        </ul>
+      </aside>
+    </div>
+
+    <div id="storage-warning" style="display: none;">Warning: there was a storage error. You can still use the app, but
+      locked fonts may not be saved. See console for details.</div>
+
+    <div id="prompt">
+      <button id="permission">Load local fonts</button>
+    </div>
+
+    <section>
+      <p><span id="family-count">0</span> font families loaded (<span id="style-count">0</span> styles)</p>
+      <button id="random">add random</button>
+      <button onclick="window.location.reload()">refresh</button>
+      <button id="random-all">lemme see em all!</button>
+      <ul id="list">
+        <li id="preview">
+          <p class="fontname">default</p>
+          <input type="checkbox" title="not locked" />
+          <header contenteditable="">sphinx of black quartz hear my vow</header>
+          <p class="lipsum" contenteditable="">lorem ipsum dolor sit amet</p>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <span>gimme-font <a href="https://github.com/seleb/gimme-font/blob/main/CHANGELOG.md" target="_blank"
+        rel="noopener noreferrer">v1.0.1</a></span>
+    <span><a href="https://github.com/seleb/gimme-font" target="_blank" rel="noopener noreferrer">source</a></span>
+    <span>made by <a href="https://seans.site" target="_blank" rel="noopener noreferrer">sean</a></span>
+  </footer>
+</body>
+
+</html>
