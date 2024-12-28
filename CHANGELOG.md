@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/seleb/gimme-font/compare/v1.0.2...v1.0.3) (2024-12-28)
+
+
+### Bug Fixes
+
+* missing quotes on font family ([fc2724a](https://github.com/seleb/gimme-font/commit/fc2724a808536d646ba4f8fa92c7b69c6aee52fd))
+
 ## [1.0.2](https://github.com/seleb/gimme-font/compare/v1.0.1...v1.0.2) (2024-12-27)
 
 
