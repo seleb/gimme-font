@@ -88,7 +88,7 @@ export async function main() {
 	const updatePreview = (familyKey: string) => {
 		const [textHeader, textBody] = generateText();
 		const family = families.get(familyKey);
-		elPreview.style.fontFamily = familyKey;
+		elPreview.style.fontFamily = `"${familyKey}"`;
 		elFontname.textContent =
 			(family?.length ?? 1) > 1
 				? `${familyKey} (${family?.length} styles)`
